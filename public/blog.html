@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        /* Roblox-inspired styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #e9ebee;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar ul li a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .item {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .item h2 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .item .download-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .item .download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Alert styles */
+        .alert-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            max-width: 300px;
+            z-index: 1000;
+        }
+        .alert {
+            background-color: #ffff00;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Roblox Blog</h2>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="messages.html">Messages</a></li>
+                <li><a href="blog.html">Downloads</a></li>
+                <li><a href="pageinwork.html">About Us</a></li>
+                <li><a href="pageinwork.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="item">
+                <h2>FilteringDisabledRevival (latest)</h2>
+                <a href="/files/FilteringDisabled.rar" class="download-btn">Download</a>
+            </div>
+            <div class="item">
+                <h2>Claxes Tool (private)</h2>
+                <a href="/files/claxes multi tool.zip" class="download-btn">Download</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert-container" id="alertContainer"></div> <!-- Container for alerts -->
+
+    <script>
+        // Function to fetch alerts from server (replace with actual fetch logic)
+        function fetchAlerts() {
+            return [
+                { message: 'Welcome to the Roblox Blog!', backgroundColor: '#ffff00' },
+                { message: 'New downloads available!', backgroundColor: '#ffa500' }
+            ];
+        }
+
+        // Function to display alerts
+        function displayAlerts(alerts) {
+            const alertContainer = document.getElementById('alertContainer');
+            alertContainer.innerHTML = ''; // Clear previous alerts
+
+            alerts.forEach(alert => {
+                const alertElement = document.createElement('div');
+                alertElement.classList.add('alert');
+                alertElement.textContent = alert.message;
+                alertElement.style.backgroundColor = alert.backgroundColor;
+                alertContainer.appendChild(alertElement);
+            });
+        }
+
+        // Fetch alerts and display them
+        const alerts = fetchAlerts();
+        displayAlerts(alerts);
+    </script>
+</body>
+</html>

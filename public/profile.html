@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Profile 2016</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        .search-bar input {
+            padding: 5px;
+            border-radius: 3px;
+            border: none;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #e9ebee;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+        }
+        .sidebar h2 {
+            text-align: center;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        .sidebar ul li a img {
+            margin-right: 10px;
+        }
+        .container {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-header img {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .profile-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .profile-stats {
+            display: flex;
+            gap: 20px;
+        }
+        .profile-stats div {
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            margin-top: 20px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .tabs div {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .tabs div:hover {
+            background-color: #f1f1f1;
+        }
+        .tabs .active {
+            border-bottom: 2px solid #007bff;
+        }
+        .content {
+            background-color: white;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .upgrade-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        .upgrade-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Roblox</h1>
+        <nav>
+            <a href="pageinwork.html">Games</a>
+            <a href="pageinwork.html">Catalog</a>
+            <a href="pageinwork.html">Develop</a>
+            <a href="pageinwork.html">ROBUX</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+    </header>
+    <div class="sidebar">
+        <h2>lte_6</h2>
+        <ul>
+            <li><a href="home.html"><img src="Images/home-icon.png" alt="Home Icon"> Home</a></li>
+            <li><a href="profile.html"><img src="Images/profile-icon.png" alt="Profile Icon"> Profile</a></li>
+            <li><a href="messages.html"><img src="Images/messages-icon.png" alt="Messages Icon"> Messages</a></li>
+            <li><a href="pageinwork.html"><img src="Images/friends-icon.png" alt="Friends Icon"> Friends</a></li>
+            <li><a href="pageinwork.html"><img src="Images/character-icon.png" alt="Character Icon"> Character</a></li>
+            <li><a href="pageinwork.html"><img src="Images/inventory-icon.png" alt="Inventory Icon"> Inventory</a></li>
+            <li><a href="pageinwork.html"><img src="Images/trade-icon.png" alt="Trade Icon"> Trade</a></li>
+            <li><a href="pageinwork.html"><img src="Images/groups-icon.png" alt="Groups Icon"> Groups</a></li>
+            <li><a href="pageinwork.html"><img src="Images/forums-icon.png" alt="Forums Icon"> Forums</a></li>
+            <li><a href="blog.html"><img src="Images/blog-icon.png" alt="Blog Icon"> Blog</a></li>
+        </ul>
+        <a href="pageinwork.html" class="upgrade-btn">Upgrade Now</a>
+    </div>
+    <div class="container">
+        <div class="profile-header">
+            <img src="Images/profile.png" alt="Profile Picture" width="100">
+            <div class="profile-details">
+                <div>
+                    <h2>Admin</h2>
+                </div>
+                <div class="profile-stats">
+                    <div>
+                        <h3>Friends</h3>
+                        <p>1</p>
+                    </div>
+                    <div>
+                        <h3>Followers</h3>
+                        <p>0</p>
+                    </div>
+                    <div>
+                        <h3>Following</h3>
+                        <p>0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabs">
+            <div class="active">About</div>
+            <div>Creations</div>
+        </div>
+        <div class="content">
+            <h3>About</h3>
+            <p>A test account</p>
+        </div>
+    </div>
+</body>
+</html>
