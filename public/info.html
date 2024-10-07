@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System and Browser Info</title>
+    
+    <!-- Favicon reference (ensure favicon.ico is in the root directory) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap CSS (Dark Mode) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+        }
+        .navbar {
+            background-color: #1c1c1c; /* Dark navbar */
+        }
+        .navbar a {
+            color: #e0e0e0 !important; /* Light text for navbar links */
+        }
+        .navbar a:hover {
+            color: #f8f9fa !important; /* Lighter text on hover */
+        }
+        #info {
+            background-color: #1c1c1c; /* Dark background for info box */
+            color: #e0e0e0; /* Light text */
+        }
+        .container h1 {
+            color: #f8f9fa; /* Lighter color for headings */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bootstrap Navbar (Dark Mode) -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Limits Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="claxhome.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="script.html">Scripts</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link active" href="#">Info</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">System and Browser Information</h1>
+        <div id="info" class="p-4 rounded shadow-sm mt-4">
+            <div class="info-item mb-3"><strong>Browser Name:</strong> <span id="browserName"></span></div>
+            <div class="info-item mb-3"><strong>Browser Version:</strong> <span id="browserVersion"></span></div>
+            <div class="info-item mb-3"><strong>Operating System:</strong> <span id="os"></span></div>
+            <div class="info-item mb-3"><strong>Platform:</strong> <span id="platform"></span></div>
+            <div class="info-item mb-3"><strong>User Agent:</strong> <span id="userAgent"></span></div>
+            <div class="info-item mb-3"><strong>Cookies Enabled:</strong> <span id="cookiesEnabled"></span></div>
+            <div class="info-item mb-3"><strong>Language:</strong> <span id="language"></span></div>
+            <div class="info-item mb-3"><strong>Public IP Address:</strong> <span id="ipAddress">Fetching...</span></div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (Popper.js and Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('browserName').textContent = navigator.appName;
+        document.getElementById('browserVersion').textContent = navigator.appVersion;
+        document.getElementById('os').textContent = navigator.platform;
+        document.getElementById('platform').textContent = navigator.platform;
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('cookiesEnabled').textContent = navigator.cookieEnabled;
+        document.getElementById('language').textContent = navigator.language || navigator.userLanguage;
+
+        // Fetch public IP address using an external API
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ipAddress').textContent = data.ip;
+            })
+            .catch(error => {
+                document.getElementById('ipAddress').textContent = 'Unable to fetch IP';
+            });
+    </script>
+
+</body>
+</html>
